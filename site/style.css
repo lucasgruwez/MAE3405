@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  color: #111;
+  background: #fff;
+  font: 16px/1.6 Arial, Helvetica, sans-serif;
+  overflow-y: scroll;
+}
+
+main {
+  width: 960px;
+  max-width: calc(100% - 40px);
+  margin: 24px auto 64px;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  margin-bottom: 28px;
+}
+
+h1 { margin: 0; font-size: 32px; line-height: 1.25; }
+h2 { margin: 24px 0 0; font-size: 24px; line-height: 1.35; }
+h3 { margin: 0 0 20px; font-size: 20px; line-height: 1.4; }
+a { color: #164c8c; text-underline-offset: 2px; }
+header a, .question-navigation { font-size: 14px; }
+.question-navigation { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 20px; }
+.topic-picker, #jump-form { display: flex; align-items: center; gap: 6px; }
+.topic-picker { min-width: 0; max-width: 100%; }
+.topic-picker select { min-width: 0; }
+.question-navigation > button { flex-shrink: 0; }
+.sequence-controls { display: inline-flex; gap: 6px; flex-shrink: 0; }
+.icon-button { display: inline-flex; align-items: center; justify-content: center; min-width: 34px; min-height: 30px; }
+.muted { color: #666; margin: 4px 0 20px; font-size: 14px; }
+
+.paper {
+  border: 2px solid #111;
+  padding: 24px;
+  overflow-wrap: anywhere;
+  overflow-x: auto;
+}
+
+.paper > h2 { margin: 0 0 20px; }
+.markdown > :first-child { margin-top: 0; }
+.markdown > :last-child { margin-bottom: 0; }
+.markdown h2 { margin: 24px 0 12px; font-size: 20px; }
+.markdown h3 { margin: 20px 0 10px; font-size: 18px; }
+.markdown p, .markdown ul, .markdown ol { margin: 14px 0; }
+.markdown img { max-width: 100%; height: auto; }
+.markdown table { border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+.markdown th, .markdown td { border: 1px solid #ccc; padding: 7px 12px; text-align: left; }
+.markdown th { background: #f5f5f5; }
+.markdown pre { overflow-x: auto; background: #f5f5f5; padding: 12px; }
+.markdown code { font-size: 0.9em; }
+.katex-display { overflow-x: auto; overflow-y: hidden; padding: 4px 0; }
+
+button, input, select { font: inherit; font-size: 14px; }
+button { cursor: pointer; padding: 4px 10px; }
+select, input { padding: 4px; }
+input[type="number"] { width: 64px; }
+.controls { text-align: center; margin: 16px 0 28px; }
+.controls > button { display: block; margin: 16px auto; }
+#jump-form { margin: 0; }
+:focus-visible { outline: 2px solid #164c8c; outline-offset: 3px; }
+#question-number:focus { outline: none; }
+[hidden] { display: none !important; }
+
+@media (max-width: 600px) {
+  main { max-width: calc(100% - 24px); margin-top: 20px; }
+  h1 { font-size: 28px; }
+  .paper { padding: 16px; }
+  .markdown table { font-size: 13px; }
+  .markdown th, .markdown td { padding: 6px 8px; }
+}

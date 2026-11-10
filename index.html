@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MAE3405 Questions</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+  <link rel="stylesheet" href="site/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/dist/markdown-it.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/markdown-it-texmath@1.0.0/texmath.js"></script>
+  <script defer src="site/questions.js"></script>
+  <script defer src="site/app.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>MAE3405 Questions</h1>
+      <a href="MAE3405%20Aide%20Memoire.pdf" target="_blank" rel="noopener">Aide-mémoire</a>
+    </header>
+
+    <p id="status" role="status">Loading questions…</p>
+    <noscript><p>Enable JavaScript to use the question bank.</p></noscript>
+
+    <section id="practice" hidden>
+      <div class="question-navigation">
+        <label class="topic-picker" for="topic-filter">Topic:
+          <select id="topic-filter"><option value="all">All topics</option></select>
+        </label>
+        <span class="sequence-controls" role="group" aria-label="Sequential question navigation">
+          <!-- Lucide v0.468.0 chevrons; see site/LUCIDE-LICENSE.txt. -->
+          <button id="previous-question" class="icon-button" type="button" aria-label="Previous Question" title="Previous Question">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="m15 18-6-6 6-6" />
+            </svg>
+          </button>
+          <button id="next-question" class="icon-button" type="button" aria-label="Next Question" title="Next Question">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="m9 18 6-6-6-6" />
+            </svg>
+          </button>
+        </span>
+        <button id="random-question" type="button">Random Question</button>
+        <form id="jump-form">
+          <label for="question-input">Go to question:</label>
+          <input id="question-input" type="number" min="1" step="1" required aria-label="Question number">
+          <button type="submit">Go</button>
+        </form>
+      </div>
+      <h2 id="question-number" tabindex="-1" aria-live="polite"></h2>
+      <p id="question-topic" class="muted"></p>
+      <article class="paper" aria-labelledby="question-title">
+        <h3 id="question-title"></h3>
+        <div id="question-content" class="markdown"></div>
+      </article>
+
+      <div class="controls">
+        <button id="answer-toggle" type="button" aria-controls="answer" aria-expanded="false">Show Answer</button>
+      </div>
+
+      <article id="answer" class="paper" aria-labelledby="answer-title" hidden>
+        <h2 id="answer-title">Answer</h2>
+        <div id="answer-content" class="markdown"></div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
